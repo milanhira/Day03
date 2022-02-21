@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-box-learn</title>
+    <!-- external css on flex-box-html -->
+    <style>
+        /* basic change */
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        /* parent flex-box-container styling */
+        .container {
+            width: 250px;
+            height: 250px;
+            background: crimson;
+            margin: 100px auto;
+            padding: 5px;
+
+            /* apply now css mother flex-box property */
+            /* flex-flow: column wrap-reverse;
+            align-items: center; 
+            justify-content:space-around; 
+            */
+
+            display: flex;
+            /* flex-flow: row wrap; */
+            flex-flow: row wrap;
+            align-content: space-evenly;
+            /* justify-content: space-around; */
+            /* align-items: flex-end; */
+            /* align-items: flex-start; */
+            
+            
+            /* flex-direction: row-reverse; */
+            /*
+            flex-wrap: wrap-reverse;
+            */
+
+            
+
+
+        }
+        /* random styling on child-flex-item */
+        .container .items {
+            min-width: 100px !important;
+            height: 40px;
+            background: aquamarine;
+            margin: 2px;
+            padding: 12px 35px;
+            /* flex-grow: 1 !important; */
+            flex-shrink: 1 !important;
+        }
+        /* styling on personalize item */
+        /* css styling agree to top_to_bottom precidency and overright
+         => !important is most powerfull toll to overright any before css styling */
+
+        .item-2 {
+            width: 90px !important;
+            height: auto !important;
+            background: gray !important;
+            order: 5;
+            flex-basis: 700px !important;
+        }
+        .item-4 {
+            width: 100px !important;
+            height: 100px !important;
+            background: rgb(34, 230, 99) !important;
+            order: 4;
+            flex-basis: 150px;
+        }
+        .item-5 {
+            width: 40px !important;
+            height: 30px !important;
+            background: rgb(48, 4, 243) !important;
+            padding: 8px 15px !important;
+            order: 3;
+            flex-basis: 200px;
+        }
+        .item-1 {
+            order: 2;
+        }
+        .item-3 {
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items item-1">1</div>
+        <div class="items item-2">2</div>
+        <div class="items item-3">3</div>
+        <div class="items item-4">4</div>
+        <div class="items item-5">5</div>
+    </div>
+    
+</body>
+</html>
