@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>make a cartun using css-positioning-and-float</title>
+    <link rel="stylesheet" href="flex-box.css">
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+    --bg-color : gray;
+    --head-color: rgb(180, 179, 184);
+    --eye-color-left: rgb(247, 244, 244);
+    --eye-color-right: rgb(10, 10, 10);
+    --after-eye-color-left: rgb(7, 7, 7);
+    --nose-color: gray;
+    --mouth-color: yellow;
+    --neck-color: rgb(36, 36, 37);
+    --tye-color: blue;
+    --body-color: white;
+    --leg-color-left: black;
+    --leg-color-right: black;
+    --cats-color-left: rgb(255, 0, 0);
+    --cats-color-right: rgb(255, 0, 0);
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.person {
+  margin: 40px auto;
+  outline: 5px solid green;
+  width: 50vw;
+  height: 50vh;
+  border: 1px solid red;
+  position: relative;
+  background: var(--bg-color);
+  box-shadow: 0px 0px 50px black;
+  z-index: -20000;
+}
+.person .head {
+  width: 80px;
+  height: 80px;
+  background: var(--head-color);
+  position: relative;
+  margin: 20px auto;
+  border-radius: 100%;
+  border-top: 2px solid black;
+  border-bottom: 0.5px solid gray;
+  z-index: 101;
+}
+.person .head .eye {
+  margin: 5px auto;
+  position: relative;
+  padding-top: 15px;
+  z-index: +10100;
+}
+.person .head .eye .eye1 {
+  width: 15px;
+  height: 15px;
+  background: var(--eye-color-left);
+  position: relative;
+  float: left;
+  margin-left: 17px;
+  border-radius: 50%;
+  outline: 1px solid white;
+  position: relative;
+}
+.person .head .eye .eye1::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--after-eye-color-left);
+  position: absolute;
+  float: left;
+  left: 6px;
+  bottom: 3px;
+  border-radius: 50%;
+}
+.person .head .eye .eye2 {
+  position: relative;
+  float: right;
+  margin-right: 17px;
+  border-radius: 0% 0% 50% 50%;
+  width: 15px;
+  height: 15px;
+  background: var(--eye-color-right);
+}
+
+.head .nose {
+  position: relative;
+  width: 10px;
+  height: 20px;
+  background: var(--nose-color);
+  margin: 17px auto;
+  border-radius: 0% 0% 50% 50%;
+}
+.head .mouth {
+  position: relative;
+  width: 25px;
+  height: 12px;
+  background: var(--mouth-color);
+  margin: -14px auto;
+  border-radius: 0% 0% 200% 200%;
+  z-index: 100;
+}
+.person .neck {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  background: var(--neck-color);
+  margin: -30px auto;
+  z-index: +100;
+}
+.tye {
+  position: relative;
+  margin: -100px auto;
+  width: 10px;
+  height: 70px;
+  background: var(--tye-color);
+  z-index: 1000;
+  clip-path: polygon(100% 0, 0 0, 50% 100%);
+}
+
+.person .body {
+  position: relative;
+  width: 80px;
+  height: 100px;
+  background: var(--body-color);
+  margin: 10px auto;
+  border-radius: 100% 100% 60% 60%;
+  z-index: 100;
+}
+.leg {
+  width: 70px;
+  height: 80px;
+  position: relative;
+  margin: 80px auto;
+  z-index: -100;
+}
+.leg1 {
+  width: 20px;
+  height: 100px;
+  background: var(--leg-color-left);
+  position: relative;
+  margin-left: 10px;
+  float: left;
+  clip-path: ellipse(40% 50% at 50% 50%);
+}
+.leg2 {
+  width: 20px;
+  height: 100px;
+  background: var(--leg-color-right);
+  position: relative;
+  margin-right: 10px;
+  float: right;
+  clip-path: ellipse(40% 50% at 50% 50%);
+}
+.person > .cats {
+  position: relative;
+  width: 90px;
+  height: 50px;
+  margin: -75px auto;
+  z-index: +2000;
+}
+.cats1 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: var(--cats-color-left);
+  margin-left: -8.5px;
+  float: left;
+  clip-path: polygon(54% 0, 54% 17%, 42% 30%, 20% 32%, 18% 18%, 37% 15%, 40% 0);
+}
+.cats2 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: var(--cats-color-right);
+  margin-left: 23px;
+  float: right;
+  /* clip-path: polygon(0 40%, 15% 37%, 18%  18%, 32% 20%, 30% 42%, 17% 54%, 0 54%; */
+  clip-path: polygon(54% 0, 55% 15%, 73% 17%, 70% 32%, 43% 30%, 37% 16%, 38% 0);
+}
+
+</style>
+<body>
+    <h1>make a curton charecter using pure html & css</h1>
+    <div class="person">
+        <div class="head">
+            <div class="eye">
+                <div class="eye1"></div>
+                <div class="eye2"></div>
+            </div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="neck"></div>
+        <div class="body"></div>
+        <div class="tye"></div>
+
+        <div class="leg">
+            <div class="leg1"></div>
+            <div class="leg2"></div>
+        </div>
+        <div class="cats">
+            <div class="cats1"></div>
+            <div class="cats2"></div>
+        </div>
+    </div>
+         
+    </div>
+</body>
+</html>
